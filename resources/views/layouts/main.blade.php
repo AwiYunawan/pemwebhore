@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="description"
-      content="Sistem Informasi Peminjaman Ruangan Kampus"
+      content="Sistem Peminjaman Sarana dan Prasarana Fakultas Teknik"
     />
-    <meta name="keywords" content="Peminjaman Ruangan Kampus" />
+    <meta name="keywords" content="Peminjaman Sarana dan Prasarana Fakultas Teknik" />
     <meta name="theme-color" content="#1A374D" />
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="/css/index.css" />
@@ -26,7 +26,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <title>SiManuk App | {{$title}} </title>
+    <title>PESRAFAT App | {{$title}} </title>
   </head>
   <body>
       @include('partials.navbar')

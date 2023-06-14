@@ -10,11 +10,11 @@
                     @csrf
                     <input type="hidden" name="room_id" id="room_id">
                     <div class="mb-3">
-                        <label for="room_id" class="form-label d-block">Kode Ruangan</label>
+                        <label for="room_id" class="form-label d-block">Kode Alat Ruangan</label>
                         <select class="form-select" aria-label="Default select example" name="room_id"
                             id="room_id" required>
                             @if (count(request()->segments()) < 3)
-                                <option selected disabled>Pilih Kode Ruangan</option>
+                                <option selected disabled>Pilih Kode Alat Ruangan</option>
                             @endif
                             @foreach ($rooms as $room)
                                 @if ($room->code == request()->segment(count(request()->segments())))
@@ -24,6 +24,16 @@
                                 @endif
                             @endforeach
                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="no_handphone" class="form-label">No Handphone</label>
+                        <input type="text" class="form-control  @error('capacity') is-invalid @enderror" id="no_handphone" 
+                        name="no_handphone" value="{{ old('no_handphone')}}" required>
+                        @error('no_handphone')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="time_start" class="form-label">Mulai Pinjam</label>

@@ -9,12 +9,13 @@
       <thead class="table-info">
         <tr>
           <th scope="row">No.</th>
-          <th scope="row">Nama Ruangan</th>
+          <th scope="row">Kode Alat Ruangan</th>
           <th scope="row">Nama Peminjam</th>
+          <th scope="row">No Handphone</th>
           <th scope="row">Mulai Pinjam</th>
           <th scope="row">Selesai Pinjam</th>
-          <th scope="row">Tujuan</th>
-          <th scope="row">Mulai Transaksi</th>
+          <th scope="row">Nama Kegiatan</th>
+          <th scope="row">Mulai Diajukan</th>
           <th scope="row">Status Pinjam</th>
           <th scope="row">Action</th>
         </tr>
@@ -25,6 +26,7 @@
             <th scope="row">{{ $loop->iteration }}</th scope="row">
               <td><a href="/dashboard/rooms/{{ $rent->room->code }}" class="text-decoration-none">{{ $rent->room->code }}</a></td>
             <td>{{ $rent->user->name }}</td>
+            <td>{{ $rent->no_handphone }}</td>
             <td>{{ $rent->time_start_use }}</td>
             <td>{{ $rent->time_end_use }}</td>
             <td>{{ $rent->purpose }}</td>

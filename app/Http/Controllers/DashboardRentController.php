@@ -43,6 +43,7 @@ class DashboardRentController extends Controller
     {
         $validatedData = $request->validate([
             'room_id' => 'required',
+            'no_handphone' => 'required',
             'time_start_use' => 'required',
             'time_end_use' => 'required',
             'purpose' => 'required|max:250',

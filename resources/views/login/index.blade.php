@@ -12,7 +12,7 @@
     <div class="hero__inner container d-flex flex-wrap justify-content-center">
         <div class="left-login">
             <img src="img/logotext.png" alt="logo">
-            <h4>sistem informasi peminjaman ruangan di kampus</h4>
+            <h4>Sistem Peminjaman Sarana dan Prasarana Fakultas Teknik</h4>
         </div>
         <div class="right-login">
             <div class="form">

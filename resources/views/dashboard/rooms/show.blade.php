@@ -7,15 +7,7 @@
 <div class="col-md-10 p-0">
     <h2 class="content-title text-center mb-3">{{$room->name}}</h2>
     <article class='explore-detail d-flex flex-wrap' style="margin-left: 20px;" tabindex='0'>
-        <div class='img-container'>
-          <img
-            class='explore-item__thumbnail'
-            src='{{ asset('storage/' . $room->img) }}'
-            alt='{{ $room->name . '.jpg' }}'
-            tabindex='0'
-            style="width: 18rem;"
-          />
-        </div>
+        
         
         <ul class='detail-explore__info'>
             <table class="table table-borderless table-sm">
@@ -27,24 +19,8 @@
                         <td>: {{$room->name}}</td>
                     </tr>
                     <tr>
-                        <th scope="col">Kode Ruangan</th>
+                        <th scope="col">Kode ALat Ruangan</th>
                         <td>: {{$room->code}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Gedung</th>
-                        <td>: {{$room->building->name}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Lantai</th>
-                        <td>: {{$room->floor}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Kapasitas</th>
-                        <td>: {{$room->capacity}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Tipe Ruangan</th>
-                        <td>: {{$room->type}}</td>
                     </tr>
                     <tr>
                         <th scope="col">Deskripsi</th>
@@ -78,6 +54,7 @@
                   <tr>
                     <th scope="row">No.</th>
                     <th scope="row">Nama Peminjam</th>
+                    <th scope="row">No Handphone</th>
                     <th scope="row">Mulai Pinjam</th>
                     <th scope="row">Selesai Pinjam</th>
                     <th scope="row">Tujuan</th>
@@ -90,6 +67,7 @@
                     <tr class="rent-detail">
                       <th scope="row">{{ $loop->iteration }}</th scope="row">
                       <td>{{ $rent->user->name }}</td>
+                      <td>{{ $rent->user->no_handphone }}</td>
                       <td class="detail-rent-room_start-time">{{ $rent->time_start_use }}</td>
                       <td>{{ $rent->time_end_use }}</td>
                       <td>{{ $rent->purpose }}</td>

@@ -11,7 +11,7 @@ class TemporaryRentController extends Controller
     public function index()
     {
         return view('dashboard.temporaryRents.index', [
-            'title' => "Peminjaman Sementara",
+            'title' => "Konfirmasi Peminjaman",
             'rents' => Rent::where('status', 'pending')->get(),
         ]);
     }

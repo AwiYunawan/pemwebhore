@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('room_id');
             $table->foreignId('user_id');
+            $table->string('no_handphone');
             $table->dateTime('time_start_use');
             $table->dateTime('time_end_use');
             $table->text('purpose');

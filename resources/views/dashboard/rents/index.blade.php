@@ -26,16 +26,17 @@
       <thead class="table-info">
         <tr>
           <th scope="row">No.</th>
-          <th scope="row">Kode Ruangan</th>
+          <th scope="row">ID Alat Ruangan</th>
           @if (auth()->user()->role_id <= 2)
             <th scope="row">Nama Peminjam</th>              
           @endif
-          <th scope="row">Mulai Pinjam</th>
-          <th scope="row">Selesai Pinjam</th>
-          <th scope="row">Tujuan</th>
-          <th scope="row">Waktu Transaksi</th>
-          <th scope="row">Kembalikan</th>
-          <th scope="row">Status Pinjam</th>
+          <th scope="row">No Handphone</th>
+          <th scope="row">Tanggal Peminjaman</th>
+          <th scope="row">Tanggal Pengembalian</th>
+          <th scope="row">Nama Kegiatan</th>
+          <th scope="row">Waktu Diajukan</th>
+          <th scope="row">Waktu Dikembalikan</th>
+          <th scope="row">Status Peminjaman</th>
           @if (auth()->user()->role_id <= 2)
             <th scope="row">Action</th>
           @endif
@@ -47,7 +48,8 @@
           <tr>
             <th scope="row">{{ $loop->iteration }}</th scope="row">
             <td><a href="/dashboard/rooms/{{ $rent->room->code }}" class="text-decoration-none" role="button">{{ $rent->room->code }}</a></td>
-            <td>{{ $rent->user->name }}</td>
+            <td>{{ $rent->user->name ?? 'Tidak Tertulis' }}</td>
+            <td>{{ $rent->no_handphone }}</td>
             <td>{{ $rent->time_start_use }}</td>
             <td>{{ $rent->time_end_use }}</td>
             <td>{{ $rent->purpose }}</td>
@@ -77,6 +79,7 @@
             @if (auth()->user()->role_id <= 2)
               <td>{{ $rent->user->name }}</td>
             @endif
+            <td>{{ $rent->no_handphone }}</td>
             <td>{{ $rent->time_start_use }}</td>
             <td>{{ $rent->time_end_use }}</td>
             <td>{{ $rent->purpose }}</td>

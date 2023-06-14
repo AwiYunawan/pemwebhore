@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use App\Models\Rent;
-use App\Models\Building;
 use Illuminate\Http\Request;
 
 class DashboardRoomController extends Controller
@@ -17,9 +16,8 @@ class DashboardRoomController extends Controller
     public function index()
     {
         return view('dashboard.rooms.index', [
-            'title' => "Ruangan",
-            'rooms' => Room::latest()->paginate(10),
-            'buildings' => Building::all(),
+            'title' => "Alat Ruangan",
+            'rooms' => Room::latest()->paginate(10)
         ]);
     }
 
@@ -46,25 +44,16 @@ class DashboardRoomController extends Controller
         $validatedData = $request->validate([
             'code' => 'required|max:4|unique:rooms',
             'name' => 'required',
-            'img' => 'image',
-            'floor' => 'required',
-            'capacity' => 'required',
-            'building_id' => 'required',
-            'type' => 'required',
             'description' => 'required|max:250',
         ]);
 
-        if ($request->file('img')) {
-            $validatedData['img'] = $request->file('img')->store('room-image');
-        } else {
-            $validatedData['img'] = "room-image/roomdefault.jpg";
-        }
+        
 
         $validatedData['status'] = false;
 
         Room::create($validatedData);
 
-        return redirect('/dashboard/rooms')->with('roomSuccess', 'Data ruangan berhasil ditambahkan');
+        return redirect('/dashboard/rooms')->with('roomSuccess', 'Data alat ruangan berhasil ditambahkan');
     }
 
     /**
@@ -106,11 +95,6 @@ class DashboardRoomController extends Controller
         // return $request;
         $rules = [
             'name' => 'required',
-            'img' => 'image',
-            'floor' => 'required',
-            'capacity' => 'required',
-            'building_id' => 'required',
-            'type' => 'required',
             'description' => 'required|max:250',
         ];
 
@@ -120,18 +104,14 @@ class DashboardRoomController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        if ($request->file('img')) {
-            $validatedData['img'] = $request->file('img')->store('room-image');
-        } else {
-            $validatedData['img'] = "room-image/roomdefault.jpg";
-        }
+        
 
         $validatedData['status'] = false;
 
         Room::where('id', $room->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/rooms')->with('roomSuccess', 'Data ruangan berhasil diubah');
+        return redirect('/dashboard/rooms')->with('roomSuccess', 'Data alat ruangan berhasil diubah');
     }
 
     /**
@@ -143,6 +123,6 @@ class DashboardRoomController extends Controller
     public function destroy(Room $room)
     {
         Room::destroy($room->id);
-        return redirect('/dashboard/rooms')->with('deleteRoom', 'Data ruangan berhasil dihapus');
+        return redirect('/dashboard/rooms')->with('deleteRoom', 'Data alat ruangan berhasil dihapus');
     }
 }

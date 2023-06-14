@@ -15,7 +15,7 @@
 </button>
     @if (auth()->user()->role_id <= 2)
     <button type="button" class="mb-3 btn button btn-primary" data-bs-toggle="modal" data-bs-target="#addRoom">
-      Tambah Ruangan
+      Tambah Alat Ruangan
     </button>
     @endif
   <div class="table-responsive">
@@ -23,8 +23,8 @@
       <thead class="table-info">
         <tr>
           <th scope="row">No.</th>
-          <th scope="row">Nama Ruangan</th>
-          <th scope="row">Kode Ruangan</th>
+          <th scope="row">Nama Alat Ruangan</th>
+          <th scope="row">Kode Alat Ruangan</th>
           <th scope="row">Action</th>
         </tr>
       </thead>
